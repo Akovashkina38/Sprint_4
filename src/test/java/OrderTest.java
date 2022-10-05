@@ -3,13 +3,12 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
-import org.openqa.selenium.*;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import ru.yandex.practicum.FAQHomePage;
 import ru.yandex.practicum.HomePage;
 import ru.yandex.practicum.OrderPage;
-import ru.yandex.practicum.OrderPage2;
+import ru.yandex.practicum.OrderPageRent;
 
 import static org.junit.Assert.assertTrue;
 
@@ -62,10 +61,10 @@ public class OrderTest {
         orderPage.inputParams(name, firstname, address, phone);
         orderPage.buttonNext();
 
-        OrderPage2 orderPage2 = new OrderPage2(driver);
-        orderPage2.inputParams(comment);
+        OrderPageRent orderPageRent = new OrderPageRent(driver);
+        orderPageRent.inputParams(comment);
 
-        assertTrue("Окно \"Заказ оформлен\" не появляется", orderPage2.isOrderCreated());
+        assertTrue("Окно \"Заказ оформлен\" не появляется", orderPageRent.isOrderCreated());
     }
 
     @Test
@@ -78,10 +77,10 @@ public class OrderTest {
         orderPage.inputParams(name, firstname, address, phone);
         orderPage.buttonNext();
 
-        OrderPage2 orderPage2 = new OrderPage2(driver);
-        orderPage2.inputParams(comment);
+        OrderPageRent orderPageRent = new OrderPageRent(driver);
+        orderPageRent.inputParams(comment);
 
-        assertTrue("Окно \"Заказ оформлен\" не появляется", orderPage2.isOrderCreated());
+        assertTrue("Окно \"Заказ оформлен\" не появляется", orderPageRent.isOrderCreated());
     }
 
     @After

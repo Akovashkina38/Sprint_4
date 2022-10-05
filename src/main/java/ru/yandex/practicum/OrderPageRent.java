@@ -8,10 +8,9 @@ import org.openqa.selenium.WebDriver;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-import static org.openqa.selenium.By.cssSelector;
 import static org.openqa.selenium.By.xpath;
 
-public class OrderPage2 {
+public class OrderPageRent {
     private final By
 
     DATE = xpath("//div[@class='Order_Form__17u6u']/div/div/div/input"),  //форма заказа: поле для ввода даты
@@ -30,7 +29,7 @@ public class OrderPage2 {
     String date = LocalDate.now().plusDays(2).format(formatter); // получаем текущую дату, прибавляем к ней 2 дня и форматируем
     private final WebDriver driver;
 
-    public OrderPage2 (WebDriver driver){
+    public OrderPageRent (WebDriver driver){
         this.driver = driver;
     }
     public void date() {

@@ -1,28 +1,31 @@
 package ru.yandex.practicum;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-
 // Класс страницы вопросы
 public class FAQHomePage {
-     private final By
-       HOME_FAQ = By.cssSelector("div.Home_FAQ__3uVm4");
+
+    private final By
+       HOME_FAQ = By.cssSelector("div.Home_FAQ__3uVm4"),
+
+       COOKIES = By.id("rcc-confirm-button");
+
     private WebDriver driver;
+
 
     //локатор для кнопки закрытие кук
     public void clickCloseCookies() {
-        By closeCookies = By.id("rcc-confirm-button");
-        driver.findElement(closeCookies).click();
+        driver.findElement(COOKIES).click();
     }
 
     //локатор для dropdown
-    public Boolean isPanelVisible(int index) {
+    public boolean isAnswerVisible(String constantText, int index) {
         By panelAnswer = By.id("accordion__panel-" + index);
         return driver.findElement(panelAnswer).isDisplayed();
     }
@@ -34,6 +37,7 @@ public class FAQHomePage {
     }
 
     public FAQHomePage(WebDriver driver) {
+
         this.driver = driver;
     }
     public void scrollQuestions() {
