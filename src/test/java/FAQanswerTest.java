@@ -62,9 +62,8 @@ public class FAQanswerTest {
 
     @Test
     public void checkAnswerText0() {
-        FAQHomePage faqHomePage = new FAQHomePage(driver);
-        faqHomePage.clickOnQuestion(index);
-        boolean actual = faqHomePage.isAnswerVisible(constantText, index);
+        page.clickOnQuestion(index);
+        boolean actual = page.isAnswerVisible(constantText, index);
         Assert.assertTrue(actual);
     }
 
